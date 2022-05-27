@@ -1,0 +1,30 @@
+.dates {
+  display: flex;
+  margin-left: var(--time-column-width);
+}
+
+.dates > li {
+  flex: 1;
+}
+
+.weekday {
+  display: block;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.weekday__name {
+  margin-right: 0.5em;
+}
+
+.weekday__date {
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  padding: 0.25em;
+}
+
+.weekday.today > .weekday__date {
+  background-color: var(--chrome-highlight);
+  color: var(--chrome-background);
+}

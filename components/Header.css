@@ -1,0 +1,9 @@
+.header {
+  align-items: center;
+  display: flex;
+  flex-grow: 0;
+  grid-column: grid-start / grid-end;
+}
+
+.title {
+}

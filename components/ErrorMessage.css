@@ -1,0 +1,7 @@
+.error {
+  padding: 1rem;
+}
+
+.error__title {
+  color: var(--chrome-highlight);
+}

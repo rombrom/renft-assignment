@@ -1,0 +1,26 @@
+@import "./components/index.css";
+
+.calendar {
+  --chrome-background: white;
+  --chrome-highlight: tomato;
+  --chrome-subtle: lightgrey;
+
+  --event-min-height: 2rem;
+  --time-column-width: 60px;
+
+  background-color: var(--chrome-background);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: relative;
+  overflow: auto;
+}
+
+.calendar__header {
+  background-color: var(--chrome-background);
+  flex: none;
+  padding: 1rem 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}

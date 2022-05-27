@@ -1,0 +1,16 @@
+.label {
+  color: var(--chrome-subtle);
+  font-size: 0.75rem;
+  font-weight: 400;
+  text-align: right;
+}
+
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}

@@ -1,0 +1,20 @@
+.all-day-events {
+  align-items: center;
+  display: flex;
+
+  border-top: solid 1px var(--chrome-subtle);
+  border-bottom: solid 3px var(--chrome-subtle);
+}
+
+.all-day-events > li {
+  flex: 1;
+}
+
+.all-day-events > .label {
+  flex: 0 0 var(--time-column-width);
+  padding-right: 0.5rem;
+}
+
+.all-day-events > li + li {
+  border-left: solid 1px var(--chrome-subtle);
+}
