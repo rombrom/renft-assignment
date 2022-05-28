@@ -14,8 +14,8 @@
   text-align: center;
 }
 
-.weekday__name {
-  margin-right: 0.5em;
+.weekday__name::after {
+  content: "\020";
 }
 
 .weekday__date {

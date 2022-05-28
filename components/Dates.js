@@ -10,6 +10,7 @@ export function Dates({ days = [], today = new Date() }) {
         "li",
         h(
           `time.weekday${isSameDay(date, today) ? ".today" : ""}`,
+          { dateTime: date.toISOString() },
           h("span.weekday__name", DAY_NAMES[date.getDay()]),
           h("span.weekday__date", date.getDate())
         )
