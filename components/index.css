@@ -1,6 +1,7 @@
-@import "./hEADER.CSS";
 @import "./AllDayEvents.css";
 @import "./Dates.css";
 @import "./ErrorMessage.css";
+@import "./Event.css";
 @import "./Events.css";
+@import "./Header.css";
 @import "./Navigation.css";

@@ -5,34 +5,31 @@ import {
   Events,
   Header,
 } from "./components/index.js";
+import { fetchEvents } from "./data.js";
 import { h } from "./lib.js";
 import { getWeekDays } from "./utils.js";
-
-const fetchEvents = () =>
-  new Promise((resolve, reject) => {
-    setTimeout(
-      () =>
-        Math.random() > 0.5
-          ? resolve("foo")
-          : reject(new Error("Could not fetch your events :(")),
-      100
-    );
-  });
 
 export function Calendar({ date = new Date(), event }) {
   const today = new Date();
   const days = getWeekDays(date);
 
-  const events = Events({ days });
-  const update = async (fn) => events.replaceWith(await fn());
+  const allDayEventsView = AllDayEvents({ days });
+  const eventsView = Events({ loading: true });
+  const update = async (fn) => eventsView.replaceWith(await fn());
 
   update(async () => {
     try {
-      const data = await fetchEvents();
-      return Events({ data, days });
+      const { allDayEvents, events } = await fetchEvents(...days);
+
+      console.log({ allDayEvents, events });
+
+      allDayEventsView.replaceWith(
+        AllDayEvents({ days, events: allDayEvents })
+      );
+      eventsView.replaceWith(Events({ days, events, loading: false }));
     } catch (error) {
       console.error(error);
-      return ErrorMessage({ error });
+      eventsView.replaceWith(ErrorMessage({ error }));
     }
   });
 
@@ -43,8 +40,8 @@ export function Calendar({ date = new Date(), event }) {
       "div.calendar__header",
       Header({ date }),
       Dates({ days, today }),
-      AllDayEvents({ days })
+      allDayEventsView
     ),
-    events
+    eventsView
   );
 }

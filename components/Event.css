@@ -1,0 +1,8 @@
+.event {
+  background-color: var(--chrome-highlight);
+  border-radius: 0.25rem;
+  flex: 1;
+  font-size: 0.825rem;
+  margin: 0.125rem;
+  padding: 0.25rem;
+}

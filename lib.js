@@ -1,7 +1,8 @@
 export function h(el = "div", ...args) {
   const [name, ...classNames] = el.split(".");
   const doc = document.createElement(name);
-  doc.className = classNames.join(" ");
+  const className = classNames.join(" ");
+  if (className) doc.className = className;
 
   for (const arg of args) {
     if (Array.isArray(arg)) for (const node of arg) mount(doc, node);
@@ -12,7 +13,7 @@ export function h(el = "div", ...args) {
       mount(doc, arg);
     else {
       const { style, ...props } = arg;
-      for (const prop in style) el.style[prop] = props.style[prop];
+      for (const prop in style) doc.style[prop] = style[prop];
 
       for (const prop in props) {
         if (prop.startsWith("on"))

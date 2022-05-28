@@ -1,9 +1,7 @@
 .all-day-events {
-  align-items: center;
-  display: flex;
-
-  border-top: solid 1px var(--chrome-subtle);
   border-bottom: solid 3px var(--chrome-subtle);
+  border-top: solid 1px var(--chrome-subtle);
+  display: flex;
 }
 
 .all-day-events > li {
@@ -11,6 +9,7 @@
 }
 
 .all-day-events > .label {
+  align-self: baseline;
   flex: 0 0 var(--time-column-width);
   padding-right: 0.5rem;
 }

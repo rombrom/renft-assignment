@@ -1,7 +1,7 @@
 .days {
   display: flex;
   flex: 1 0 calc(var(--event-min-height) * 24);
-  margin: 0.5rem 1rem;
+  padding: 0.5rem 1rem;
   position: relative;
 }
 
@@ -21,6 +21,22 @@
     transparent 1px,
     transparent 4.166%
   );
+}
+
+.day__events {
+  align-content: start;
+  align-items: start;
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+}
+
+.day__events > li {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: var(--event-min-height);
+  position: relative;
 }
 
 .times {
