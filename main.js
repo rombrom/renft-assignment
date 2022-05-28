@@ -1,5 +1,5 @@
-import { Calendar } from "./Calendar.js";
-import { mount } from "./lib.js";
+import { Calendar } from "./src/Calendar.js";
+import { mount } from "./src/lib.js";
 
 const params = new URLSearchParams(window.location.search);
 

@@ -16,6 +16,11 @@ export function h(el = "div", ...args) {
       for (const prop in style) doc.style[prop] = style[prop];
 
       for (const prop in props) {
+        if (prop.startsWith("aria"))
+          doc.setAttribute(
+            prop.replace(/[A-Z]/, (s) => `-${s.toLowerCase()}`),
+            props[prop].toString()
+          );
         if (prop.startsWith("on"))
           doc[prop.toLowerCase()] = (event) => {
             props[prop](event);

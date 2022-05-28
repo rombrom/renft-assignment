@@ -1,7 +1,7 @@
-import { offsetDays } from "./utils.js";
+import { offsetDays } from "../shared/utils.js";
 
 export const fetchEvents = async (...days) => {
-  const res = await fetch("./data.json");
+  const res = await fetch("../mocks/events.json");
   if (!res.ok) throw Error(`${res.status}: ${res.statusText}`);
   const data = await res.json();
 

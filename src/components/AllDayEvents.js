@@ -4,9 +4,8 @@ import { Event } from "./Event.js";
 export function AllDayEvents({ days = [], events = new Map() }) {
   return h(
     "ol.all-day-events",
-    { ariaHidden: true },
     h("li.label", { ariaHidden: true }, "all-day"),
-    ...days.map((dayStart) => {
+    days.map((dayStart) => {
       const dayEvents = events.get(dayStart) ?? [];
       return h(
         "li",
@@ -15,7 +14,10 @@ export function AllDayEvents({ days = [], events = new Map() }) {
           `All-day events for`,
           h("time", { dateTime: dayStart.toISOString() }, dayStart.toString())
         ),
-        h("ol", ...dayEvents.map((event) => h("li", Event(event))))
+        h(
+          "ol",
+          dayEvents.map((event) => h("li", Event(event)))
+        )
       );
     })
   );

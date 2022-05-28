@@ -1,20 +1,20 @@
+import { fetchEvents } from "../services/events.js";
+import { getDays } from "../shared/utils.js";
 import {
   AllDayEvents,
   Dates,
+  Days,
   ErrorMessage,
-  Events,
   Header,
 } from "./components/index.js";
-import { fetchEvents } from "./data.js";
 import { h } from "./lib.js";
-import { getWeekDays } from "./utils.js";
 
-export function Calendar({ date = new Date(), event }) {
+export function Calendar({ date = new Date() }) {
   const today = new Date();
-  const days = getWeekDays(date);
+  const days = getDays(date, 6);
 
   const allDayEventsView = AllDayEvents({ days });
-  const eventsView = Events({ loading: true });
+  const eventsView = Days({ loading: true });
   const update = async (fn) => eventsView.replaceWith(await fn());
 
   update(async () => {
@@ -26,7 +26,7 @@ export function Calendar({ date = new Date(), event }) {
       allDayEventsView.replaceWith(
         AllDayEvents({ days, events: allDayEvents })
       );
-      eventsView.replaceWith(Events({ days, events, loading: false }));
+      eventsView.replaceWith(Days({ days, events, loading: false }));
     } catch (error) {
       console.error(error);
       eventsView.replaceWith(ErrorMessage({ error }));

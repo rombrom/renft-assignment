@@ -1,5 +1,5 @@
+import { MONTH_NAMES } from "../../shared/utils.js";
 import { h } from "../lib.js";
-import { MONTH_NAMES } from "../utils.js";
 import { Navigation } from "./navigation.js";
 
 function Title(...args) {

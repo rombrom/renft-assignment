@@ -1,10 +1,9 @@
+import { DAY_NAMES, isSameDay } from "../../shared/utils.js";
 import { h } from "../lib.js";
-import { DAY_NAMES, isSameDay } from "../utils.js";
 
 export function Dates({ days = [], today = new Date() }) {
   return h(
     "ol.dates",
-    { ariaHidden: true },
     days.map((date) =>
       h(
         "li",

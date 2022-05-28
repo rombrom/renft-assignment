@@ -1,5 +1,5 @@
+import { offsetDays } from "../../shared/utils.js";
 import { h } from "../lib.js";
-import { offsetDays } from "../utils.js";
 
 export function Navigation({ date }) {
   const prevUrl = `/?date=${offsetDays(date, -7).toISOString()}`;

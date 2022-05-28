@@ -13,16 +13,6 @@
   border-left: solid 1px var(--chrome-subtle);
 }
 
-.day {
-  background-image: repeating-linear-gradient(
-    180deg,
-    var(--chrome-subtle),
-    var(--chrome-subtle) 1px,
-    transparent 1px,
-    transparent 4.166%
-  );
-}
-
 .times {
   display: flex;
   flex-direction: column;
@@ -35,13 +25,4 @@
 /* HACK: add an empty flex child so labels align veritcally */
 .times::after {
   content: "";
-}
-
-.now {
-  padding: 0;
-  margin: 0;
-  position: absolute;
-  top: 0;
-  border: solid 1px tomato;
-  width: 100%;
 }

@@ -23,6 +23,25 @@ export function isSameDay(a, b) {
   );
 }
 
+export function offsetDays(date = new Date(), days = 0) {
+  const nextDate = new Date(date);
+  nextDate.setDate(date.getDate() + days);
+  return nextDate;
+}
+
+export function getDays(date, n = 0) {
+  const day = date.getDay();
+  const weekStart = startOfDay(offsetDays(date, -(day - 1)));
+  const days = [];
+
+  const itrs = Math.abs(n);
+  const factor = n < 0 ? -1 : 1;
+
+  for (let i = 0; i <= itrs; i++) days.push(offsetDays(weekStart, i * factor));
+
+  return days.sort((a, b) => (a > b ? 1 : -1));
+}
+
 export function startOfDay(date = new Date()) {
   const nextDate = new Date(date);
   nextDate.setHours(0);
@@ -30,20 +49,4 @@ export function startOfDay(date = new Date()) {
   nextDate.setMinutes(0);
   nextDate.setSeconds(0);
   return nextDate;
-}
-
-export function offsetDays(date = new Date(), days = 0) {
-  const nextDate = new Date(date);
-  nextDate.setDate(date.getDate() + days);
-  return nextDate;
-}
-
-export function getWeekDays(date) {
-  const day = date.getDay();
-  const weekStart = startOfDay(offsetDays(date, -(day - 1)));
-  const days = [];
-
-  for (let i = 0; i < 7; i++) days.push(offsetDays(weekStart, i));
-
-  return days;
 }
