@@ -22,6 +22,8 @@
   flex: 1;
   max-width: 100%;
   min-height: var(--event-min-height);
-  min-width: 0;
   position: relative;
+
+  /* HACK: make flex play nice with white-space: nowrap */
+  width: 1px;
 }

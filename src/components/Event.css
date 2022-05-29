@@ -13,6 +13,7 @@
 
 .event__time,
 .event__title {
+  flex: none;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;

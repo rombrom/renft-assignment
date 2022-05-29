@@ -10,22 +10,15 @@ export function Day({ dayStart, events = [] }) {
     h("h2.day__title.sr-only", dayStart.toString()),
     h(
       "ol.day__events",
-      events.map((event, i) => {
+      events.map((event) => {
         const hasOverlap = events
           .filter((e) => e !== event)
           .some((e) => e.dateFrom < event.dateTo && e.dateTo > event.dateFrom);
 
-        const offsetEventDate =
-          events
-            .slice(0, i)
-            .reverse()
-            .find((e) => e.dateTo <= event.dateFrom)?.dateTo ?? new Date(0);
-
-        const offsetDate = Math.max(Number(dayStart), Number(offsetEventDate));
         const minDate = Math.max(Number(dayStart), Number(event.dateFrom));
         const maxDate = Math.min(Number(dayEnd), Number(event.dateTo));
 
-        const offsetY = (minDate - offsetDate) / DAY_LENGTH;
+        const offsetY = (minDate - dayStart) / DAY_LENGTH;
         const height = (maxDate - minDate) / DAY_LENGTH;
 
         const style = {
