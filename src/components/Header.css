@@ -3,6 +3,7 @@
   display: flex;
   flex-grow: 0;
   grid-column: grid-start / grid-end;
+  margin-bottom: 1rem;
 }
 
 .title__month::after {

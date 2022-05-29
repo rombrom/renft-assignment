@@ -6,7 +6,6 @@
   flex: 1;
   font-size: 0.825rem;
   margin: 0.125rem;
-  min-height: var(--event-min-height);
   overflow: hidden;
   padding: 0.25rem;
 }

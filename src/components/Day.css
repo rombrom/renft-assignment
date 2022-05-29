@@ -1,11 +1,15 @@
 .day {
   background-image: repeating-linear-gradient(
     180deg,
-    var(--chrome-subtle),
-    var(--chrome-subtle) 1px,
+    var(--chrome-separators),
+    var(--chrome-separators) 1px,
     transparent 1px,
     transparent 4.166%
   );
+}
+
+.day--weekend {
+  background-color: var(--chrome-separators);
 }
 
 .day__events {
@@ -21,7 +25,6 @@
   flex-direction: column;
   flex: 1;
   max-width: 100%;
-  min-height: var(--event-min-height);
   position: relative;
 
   /* HACK: make flex play nice with white-space: nowrap */

@@ -29,15 +29,12 @@ export function offsetDays(date = new Date(), days = 0) {
   return nextDate;
 }
 
-export function getDays(date, n = 0) {
+export function getWeek(date) {
   const day = date.getDay();
-  const weekStart = startOfDay(offsetDays(date, -(day - 1)));
+  const weekStart = startOfDay(offsetDays(date, -(day === 0 ? 7 : day - 1)));
   const days = [];
 
-  const itrs = Math.abs(n);
-  const factor = n < 0 ? -1 : 1;
-
-  for (let i = 0; i <= itrs; i++) days.push(offsetDays(weekStart, i * factor));
+  for (let i = 0; i < 7; i++) days.push(offsetDays(weekStart, i));
 
   return days.sort((a, b) => (a > b ? 1 : -1));
 }

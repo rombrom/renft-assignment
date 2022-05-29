@@ -3,9 +3,11 @@ import { mount } from "./src/lib.js";
 
 const params = new URLSearchParams(window.location.search);
 
-const date = params.has("date") ? new Date(params.get("date")) : new Date();
+const date = params.has("date")
+  ? new Date(decodeURIComponent(params.get("date")))
+  : new Date();
 const event = params.has("event") ? new Date(params.get("event")) : undefined;
 
-document.title = date.toString();
+document.title = date.toDateString();
 
 mount(document.getElementById("root"), Calendar({ date, event }));

@@ -1,3 +1,31 @@
-.navigation {
+.nav {
+  align-items: center;
+  display: flex;
+  gap: 0.5rem;
   margin-left: auto;
+}
+
+.nav__button {
+  aspect-ratio: 1 / 1;
+  display: inline-block;
+  border-radius: 50%;
+  color: var(--chrome-highlight);
+  border: solid 1px transparent;
+  text-decoration: none;
+  text-align: center;
+  width: 1.5rem;
+  transition: all 150ms ease;
+}
+
+.nav__button:hover {
+  border-color: var(--chrome-highlight);
+}
+
+.nav__today {
+  color: var(--chrome-highlight);
+  text-decoration: none;
+}
+
+.nav__today:hover {
+  text-decoration: underline;
 }

@@ -4,9 +4,10 @@ import { Event } from "./Event.js";
 
 export function Day({ dayStart, events = [] }) {
   const dayEnd = offsetDays(dayStart, 1);
+  const isWeekend = [6, 0].includes(dayStart.getDay());
 
   return h(
-    "article.day",
+    `article.day${isWeekend ? ".day--weekend" : ""}`,
     h("h2.day__title.sr-only", dayStart.toString()),
     h(
       "ol.day__events",

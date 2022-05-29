@@ -4,6 +4,7 @@
       auto-fit,
       minmax(var(--day-min-width), 1fr)
     );
+  grid-template-rows: 1fr;
   min-width: calc(var(--time-column-width) + (var(--day-min-width) * 7));
 }
 
@@ -12,7 +13,7 @@
 }
 
 .label {
-  color: var(--chrome-subtle);
+  color: var(--chrome-neutral);
   font-size: 0.75rem;
   font-weight: 400;
   text-align: right;

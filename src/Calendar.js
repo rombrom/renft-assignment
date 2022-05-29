@@ -1,5 +1,5 @@
 import { fetchEvents } from "../services/events.js";
-import { getDays } from "../shared/utils.js";
+import { getWeek } from "../shared/utils.js";
 import {
   AllDayEvents,
   Dates,
@@ -11,7 +11,7 @@ import { h } from "./lib.js";
 
 export function Calendar({ date = new Date() }) {
   const today = new Date();
-  const days = getDays(date, 6);
+  const days = getWeek(date);
 
   const allDayEventsView = AllDayEvents({ days });
   const eventsView = Days({ loading: true });
@@ -20,8 +20,6 @@ export function Calendar({ date = new Date() }) {
   update(async () => {
     try {
       const { allDayEvents, events } = await fetchEvents(...days);
-
-      console.log({ allDayEvents, events });
 
       allDayEventsView.replaceWith(
         AllDayEvents({ days, events: allDayEvents })

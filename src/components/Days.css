@@ -5,7 +5,7 @@
 }
 
 .days > article + article {
-  border-left: solid 1px var(--chrome-subtle);
+  border-left: solid 1px var(--chrome-borders);
 }
 
 .times {

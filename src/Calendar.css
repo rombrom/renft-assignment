@@ -3,14 +3,17 @@
 .calendar {
   --chrome-background: white;
   --chrome-highlight: tomato;
-  --chrome-subtle: rgba(127, 127, 127, 0.25);
+  --chrome-borders: rgba(127, 127, 127, 0.33);
+  --chrome-separators: rgba(127, 127, 127, 0.2);
+  --chrome-neutral: grey;
+  --chrome-foreground: #222;
 
-  --day-min-width: 80px;
-  --event-min-height: 1.5rem;
+  --day-min-width: 90px;
   --hour-min-height: 3rem;
   --time-column-width: 60px;
 
   background-color: var(--chrome-background);
+  color: var(--chrome-foreground);
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -25,4 +28,11 @@
   position: sticky;
   top: 0;
   z-index: 1;
+}
+
+@media (prefers-color-scheme: dark) {
+  .calendar {
+    --chrome-background: #222;
+    --chrome-foreground: white;
+  }
 }

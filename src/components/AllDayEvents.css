@@ -1,11 +1,27 @@
 .all-day-events {
-  border-bottom: solid 3px var(--chrome-subtle);
-  border-top: solid 1px var(--chrome-subtle);
+  border-bottom: solid 3px var(--chrome-borders);
+  border-top: solid 1px var(--chrome-borders);
+  max-height: 5rem;
+  overflow-y: auto;
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+
+.all-day-events::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
 }
 
 .all-day-events > .label {
+  align-self: baseline;
+  padding-top: 0.25rem;
+  position: sticky;
+  top: 0;
 }
 
 .all-day-events > li:not(.label) + li {
-  border-left: solid 1px var(--chrome-subtle);
+  border-left: solid 1px var(--chrome-borders);
+}
+
+.all-day-events .event__time {
+  display: none;
 }
