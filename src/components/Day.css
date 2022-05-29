@@ -1,8 +1,8 @@
 .day {
   background-image: repeating-linear-gradient(
     180deg,
-    lightgrey,
-    lightgrey 1px,
+    var(--chrome-subtle),
+    var(--chrome-subtle) 1px,
     transparent 1px,
     transparent 4.166%
   );
@@ -20,6 +20,8 @@
   display: flex;
   flex-direction: column;
   flex: 1;
+  max-width: 100%;
   min-height: var(--event-min-height);
+  min-width: 0;
   position: relative;
 }

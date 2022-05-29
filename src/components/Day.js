@@ -29,7 +29,7 @@ export function Day({ dayStart, events = [] }) {
         const height = (maxDate - minDate) / DAY_LENGTH;
 
         const style = {
-          flexBasis: !hasOverlap ? "100%" : "0",
+          flexBasis: !hasOverlap ? "100%" : "inherit",
           height: `${height * 100}%`,
           top: `${offsetY * 100}%`,
         };

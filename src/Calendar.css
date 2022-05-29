@@ -3,9 +3,11 @@
 .calendar {
   --chrome-background: white;
   --chrome-highlight: tomato;
-  --chrome-subtle: lightgrey;
+  --chrome-subtle: rgba(127, 127, 127, 0.25);
 
-  --event-min-height: 2rem;
+  --day-min-width: 80px;
+  --event-min-height: 1.5rem;
+  --hour-min-height: 3rem;
   --time-column-width: 60px;
 
   background-color: var(--chrome-background);

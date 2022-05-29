@@ -5,7 +5,7 @@ export function Days({ days = [], events = new Map(), loading = false }) {
   if (loading) return h("p", "Loading...");
 
   return h(
-    "section.days",
+    "section.columns.days",
     h(
       "ol.times",
       { ariaHidden: true },

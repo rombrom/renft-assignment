@@ -1,8 +1,23 @@
 .event {
   background-color: var(--chrome-highlight);
   border-radius: 0.25rem;
+  display: flex;
+  flex-direction: column;
   flex: 1;
   font-size: 0.825rem;
   margin: 0.125rem;
+  min-height: var(--event-min-height);
+  overflow: hidden;
   padding: 0.25rem;
+}
+
+.event__time,
+.event__title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.event__time {
+  order: -1;
 }

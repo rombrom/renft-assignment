@@ -5,5 +5,10 @@
   grid-column: grid-start / grid-end;
 }
 
-.title {
+.title__month::after {
+  content: "\020";
+}
+
+.title__year {
+  font-weight: 200;
 }

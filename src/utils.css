@@ -1,3 +1,16 @@
+.columns {
+  display: grid;
+  grid-template-columns: var(--time-column-width) repeat(
+      auto-fit,
+      minmax(var(--day-min-width), 1fr)
+    );
+  min-width: calc(var(--time-column-width) + (var(--day-min-width) * 7));
+}
+
+.columns > :first-child {
+  padding-right: 0.5rem;
+}
+
 .label {
   color: var(--chrome-subtle);
   font-size: 0.75rem;

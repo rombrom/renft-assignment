@@ -3,7 +3,7 @@ import { h } from "../lib.js";
 
 export function Dates({ days = [], today = new Date() }) {
   return h(
-    "ol.dates",
+    "ol.columns.dates",
     days.map((date) =>
       h(
         "li",

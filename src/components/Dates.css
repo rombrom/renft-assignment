@@ -1,10 +1,13 @@
 .dates {
-  display: flex;
-  margin-left: var(--time-column-width);
+}
+
+/* HACK: add an empty child so we can use .columns */
+.dates::before {
+  content: "";
+  display: block;
 }
 
 .dates > li {
-  flex: 1;
 }
 
 .weekday {

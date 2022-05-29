@@ -1,19 +1,11 @@
 .all-day-events {
   border-bottom: solid 3px var(--chrome-subtle);
   border-top: solid 1px var(--chrome-subtle);
-  display: flex;
-}
-
-.all-day-events > li {
-  flex: 1;
 }
 
 .all-day-events > .label {
-  align-self: baseline;
-  flex: 0 0 var(--time-column-width);
-  padding-right: 0.5rem;
 }
 
-.all-day-events > li + li {
+.all-day-events > li:not(.label) + li {
   border-left: solid 1px var(--chrome-subtle);
 }

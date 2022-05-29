@@ -3,7 +3,7 @@ import { Event } from "./Event.js";
 
 export function AllDayEvents({ days = [], events = new Map() }) {
   return h(
-    "ol.all-day-events",
+    "ol.columns.all-day-events",
     h("li.label", { ariaHidden: true }, "all-day"),
     days.map((dayStart) => {
       const dayEvents = events.get(dayStart) ?? [];

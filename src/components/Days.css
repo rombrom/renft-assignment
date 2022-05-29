@@ -1,12 +1,7 @@
 .days {
-  display: flex;
-  flex: 1 0 calc(var(--event-min-height) * 24);
+  flex: 1 0 calc(var(--hour-min-height) * 24);
   margin: 0.5rem 1rem;
   position: relative;
-}
-
-.days > article {
-  flex: 1;
 }
 
 .days > article + article {
@@ -18,8 +13,6 @@
   flex-direction: column;
   justify-content: space-between;
   margin-top: -0.5rem;
-  padding-right: 0.5rem;
-  flex: 0 0 var(--time-column-width);
 }
 
 /* HACK: add an empty flex child so labels align veritcally */
