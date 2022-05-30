@@ -21,7 +21,7 @@ $ python -m http.server 8080
 $ npx http-server
 ```
 
-Navigate to [http://localhost:3000](http://localhost:3000).
+Navigate to [http://localhost:8080](http://localhost:8080).
 
 ## Caveats
 
