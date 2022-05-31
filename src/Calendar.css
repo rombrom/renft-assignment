@@ -17,11 +17,10 @@
   color: var(--chrome-foreground);
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100%;
   min-width: calc(var(--time-column-width) + (var(--day-min-width) * 7));
-  padding: 0 1rem;
+  padding: 0 1rem 1rem;
   position: relative;
-  overflow: auto;
 }
 
 .calendar__header {
