@@ -5,7 +5,6 @@
       minmax(var(--day-min-width), 1fr)
     );
   grid-template-rows: 1fr;
-  min-width: calc(var(--time-column-width) + (var(--day-min-width) * 7));
 }
 
 .columns > :first-child {

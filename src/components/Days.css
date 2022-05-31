@@ -1,6 +1,6 @@
 .days {
   flex: 1 0 calc(var(--hour-min-height) * 24);
-  margin: 0.5rem 1rem;
+  margin-top: 0.5rem;
   position: relative;
 }
 

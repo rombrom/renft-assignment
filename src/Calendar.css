@@ -13,10 +13,13 @@
   --time-column-width: 60px;
 
   background-color: var(--chrome-background);
+  box-sizing: content-box;
   color: var(--chrome-foreground);
   display: flex;
   flex-direction: column;
   height: 100vh;
+  min-width: calc(var(--time-column-width) + (var(--day-min-width) * 7));
+  padding: 0 1rem;
   position: relative;
   overflow: auto;
 }
@@ -24,6 +27,7 @@
 .calendar__header {
   background-color: var(--chrome-background);
   flex: none;
+  margin: -1rem -1rem 0;
   padding: 1rem 1rem 0;
   position: sticky;
   top: 0;
