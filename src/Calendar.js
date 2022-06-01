@@ -15,7 +15,7 @@ export function Calendar({ date = new Date() }) {
 
   const allDayEventsView = AllDayEvents({ days });
   const eventsView = Days({ loading: true });
-  const update = async (fn) => eventsView.replaceWith(await fn());
+  const update = async (fn) => fn();
 
   update(async () => {
     try {
