@@ -22,10 +22,15 @@ export function Day({ dayStart, events = [] }) {
         const offsetY = (minDate - dayStart) / DAY_LENGTH;
         const height = (maxDate - minDate) / DAY_LENGTH;
 
+        console.log(event.eventName);
+        console.log(event.dateFrom, event.dateTo);
+        console.log(offsetY, height, offsetY + height);
+
         const style = {
-          flexBasis: !hasOverlap ? "100%" : "inherit",
-          height: `${height * 100}%`,
-          top: `${offsetY * 100}%`,
+          gridColumn: hasOverlap ? "auto" : "row-start / row-end",
+          gridRow: `${Math.round(offsetY * 1440) || 1} / ${Math.round(
+            (offsetY + height) * 1440
+          )}`,
         };
 
         return h("li", { style }, Event(event));

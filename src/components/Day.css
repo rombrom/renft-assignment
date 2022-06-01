@@ -13,20 +13,14 @@
 }
 
 .day__events {
-  align-content: start;
-  align-items: start;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-auto-columns: [row-start] minmax(var(--day-min-width), 1fr) [row-end];
+  grid-template-rows: repeat(1440, calc(100% / 1440));
   height: 100%;
 }
 
 .day__events > li {
   display: flex;
   flex-direction: column;
-  flex: 1;
-  max-width: 100%;
-  position: relative;
-
-  /* HACK: make flex play nice with white-space: nowrap */
-  width: 1px;
+  min-width: 0;
 }
