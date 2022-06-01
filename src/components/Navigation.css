@@ -5,16 +5,22 @@
   margin-left: auto;
 }
 
+.nav > a {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
 .nav__button {
   aspect-ratio: 1 / 1;
-  display: inline-block;
   border-radius: 50%;
-  color: var(--chrome-highlight);
   border: solid 1px transparent;
+  color: var(--chrome-highlight);
+  display: inline-block;
+  padding: 0.125rem 0.25rem 0.25rem;
   text-decoration: none;
-  text-align: center;
-  width: 1.5rem;
   transition: all 150ms ease;
+  width: 1rem;
 }
 
 .nav__button:hover {
