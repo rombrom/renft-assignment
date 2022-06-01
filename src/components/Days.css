@@ -12,6 +12,9 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  /* we need to offset it a bit to offset the difference in
+   * height between this container and each .day. */
+  margin-bottom: 0.5rem;
   margin-top: -0.5rem;
 }
 
